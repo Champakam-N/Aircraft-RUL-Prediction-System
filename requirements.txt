@@ -1,0 +1,15 @@
+flask
+pandas
+numpy
+scikit-learn
+matplotlib
+joblib
+tensorflow
+torch
+torchvision
+torchaudio
+torch-geometric
+sentence-transformers
+groq
+werkzeug
+sqlite3
