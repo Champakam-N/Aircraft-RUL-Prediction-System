@@ -112,14 +112,13 @@ def load_train_artifacts():
 
 scaler, features, edge_index = load_train_artifacts()
 
-# =========================================================
+
 # LOAD EMBEDDING MODEL
-# =========================================================
+
 embed = SentenceTransformer("all-MiniLM-L6-v2")
 
-# =========================================================
 # HYBRID MODEL
-# =========================================================
+
 class Hybrid(nn.Module):
 
     def __init__(self,text_dim,num_sensors):
@@ -168,9 +167,8 @@ model = Hybrid(384, len(features))
 model.load_state_dict(torch.load("REAL_GNN.pt", map_location="cpu"))
 model.eval()
 
-# =========================================================
 # ROUTES
-# =========================================================
+
 
 @app.route('/')
 def index():
