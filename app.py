@@ -1,6 +1,5 @@
-# =========================================================
+
 # IMPORTS
-# =========================================================
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -20,14 +19,11 @@ import matplotlib
 matplotlib.use('Agg')   
 import matplotlib.pyplot as plt
 
-# =========================================================
 # INITIALIZE FLASK
-# =========================================================
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
 
 WINDOW = 30
-
 
 # DATABASE
 
@@ -49,9 +45,8 @@ def init_db():
     conn.commit()
     conn.close()
 
-# =========================================================
 # GROQ AI
-# =========================================================
+
 client = Groq(api_key="your_key")
 def explain(rul):
 
@@ -90,7 +85,7 @@ def explain(rul):
         return r.choices[0].message.content.strip()
     except:
         return "AI explanation unavailable."
-# =========================================================
+
 # LOAD TRAIN ARTIFACTS
 # =========================================================
 def load_train_artifacts():
