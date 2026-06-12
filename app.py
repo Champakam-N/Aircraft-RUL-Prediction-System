@@ -28,9 +28,9 @@ app.secret_key = 'your_secret_key_here'
 
 WINDOW = 30
 
-# =========================================================
+
 # DATABASE
-# =========================================================
+
 def get_db_connection():
     conn = sqlite3.connect('users.db')
     conn.row_factory = sqlite3.Row
